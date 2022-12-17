@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+        integrity=
+"sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer"></script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
+        integrity=
+"sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer"></script>
+<style>
+  body{
+    
+  }
+  input[type="button"] {
+
+  
+  background:#219b9f;
+  cursor:pointer;
+  color:white;
+    width:100%;
+    font-size:24px;
+    border:solid black;
+
+}
+input[type="button"]:hover { background:#217b9f; }
+  
+input[type="text"]{ 
+  background-color: white;
+  border:solid black 1px;
+}
+</style>
+  
+</head>
+<h1 id="test"></h1>
+<body>
+  
+  <center>
+    
+    
+  <h1>Calculator</h1>
+  <table border="1">
+    <tr >
+      <td colspan="3">
+        <input id="text" type="text"> </td>
+      <td><input type="button" onclick="delet()"  value="C"></td>
+    </tr>
+    <tr>
+    <td><input type="button" onclick="num(1)" value="1"></td>
+     <td><input type="button" onclick="num(2)"  value="2"></td>
+     <td><input type="button" onclick="num(3)" value="3"></td>
+     <td><input type="button" onclick="num('/')" value="/"></td>
+    </tr>
+    <tr>
+     <td><input type="button" onclick="num(4)" value="4"></td>
+     <td><input type="button" onclick="num(5)" value="5"></td>
+     <td><input type="button" onclick="num(6)" value="6"></td>
+     <td><input type="button" onclick="num('-')" value="-"></td>
+    </tr>
+
+  
+    <tr>
+     <td><input type="button" onclick="num(7)"  value="7"></td>
+     <td><input type="button" onclick="num(8)" value="8"></td>
+     <td><input type="button" onclick="num(9)" value="9"></td>
+     <td><input type="button" onclick="num('+')" value="+"></td>
+    </tr>
+  <tr>
+     <td><input type="button" onclick="num('.')" value="."></td>
+     <td><input type="button" onclick="num(0)" value="0"></td>
+     <td><input type="button" onclick="solve()" value="="></td>
+     <td><input type="button" onclick="num('*')" value="x"></td>
+    </tr>
+  </table>
+
+  <script>
+    
+    function num(n){
+      
+      document.getElementById("text").value += n ;
+      
+    } 
+    function delet(){
+      document.getElementById("text").value = "" ;
+      
+    } 
+    
+    function solve(){
+      var a =  document.getElementById("text").value;
+      var y = math.evaluate(a);
+      document.getElementById("text").value = y;
+      
+    }
+  </script>
+  
+</body>
+
+</html>
